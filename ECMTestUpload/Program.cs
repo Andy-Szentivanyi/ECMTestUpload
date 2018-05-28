@@ -188,7 +188,7 @@ namespace ECMTestUpload
                 StreamReader reader2 = new StreamReader( stream2 );
                 string result = string.Format( "File uploaded, server response is: {0}" , reader2.ReadToEnd( ) );
             }
-            catch ( Exception ex )
+            catch 
             {
 
                 if ( wresp != null )
@@ -196,6 +196,8 @@ namespace ECMTestUpload
                     wresp.Close( );
                     wresp = null;
                 }
+
+                throw;
             }
             finally
             {
